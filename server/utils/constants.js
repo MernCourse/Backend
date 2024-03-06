@@ -41,5 +41,6 @@ module.exports =  {
     DB_LINK: DB_LINK,
     MIME_TYPE_MAP: MIME_TYPE_MAP,
     JWT_SECRET_WORD: process.env.JWT_SECRECT_KEY,
-    JWT_EXPIRE: JWT_EXPIRE
+    JWT_EXPIRE: JWT_EXPIRE,
+    SAVED_IMAGES: process.env.SAVED_IMAGES
 }

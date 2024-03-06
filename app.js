@@ -8,7 +8,7 @@ const path = require('path')
 const placesRoutes = require('./server/routes/places-routes')
 const userRoutes = require('./server/routes/user-routes')
 const httpError = require('./server/models/http-error')
-const { DB_LINK } = require('./server/utils/constants')
+const { DB_LINK, SAVED_IMAGES } = require('./server/utils/constants')
 
 const app = express()
 
@@ -17,13 +17,12 @@ app.use(cors())
 app.use(bodyParser.json())
 
 console.log('----------------------------------------------');
-console.log(path.join('uploads', 'images'))
-console.log(__dirname + path.join('uploads', 'images'))
-console.log(__dirname + 'uploads\\images')
-console.log(process.cwd() + '/' + path.join('uploads', 'images'))
+console.log(SAVED_IMAGES)
+console.log(__dirname + SAVED_IMAGES)
+console.log(process.cwd() + SAVED_IMAGES)
 console.log('----------------------------------------------');
 
-app.use('/uploads/images', express.static(path.join('uploads', 'images')))
+app.use('/uploads/images', express.static(process.cwd() + SAVED_IMAGES))
 
 app.use('/api/users', userRoutes)
 

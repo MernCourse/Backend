@@ -4,6 +4,7 @@
         "DB_PASSWORD": "ZuPY8F6mjYvh3Nxn",
         "DB_NAME": "mern",
         "MAPS_API_KEY": "AIzaSyBOPoSlPca5KF_svoQnn3SleAcbebg2XB4",
-        "JWT_SECRECT_KEY": "supersecret_dont_share"
+        "JWT_SECRECT_KEY": "supersecret_dont_share",
+        "SAVED_IMAGES": "/uploads/images"
     }
 }
