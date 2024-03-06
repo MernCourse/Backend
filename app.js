@@ -16,6 +16,13 @@ app.use(cors())
 
 app.use(bodyParser.json())
 
+console.log('----------------------------------------------');
+console.log(path.join('uploads', 'images'))
+console.log(__dirname + path.join('uploads', 'images'))
+console.log(__dirname + 'uploads\\images')
+console.log(process.cwd() + '/' + path.join('uploads', 'images'))
+console.log('----------------------------------------------');
+
 app.use('/uploads/images', express.static(path.join('uploads', 'images')))
 
 app.use('/api/users', userRoutes)
