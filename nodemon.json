@@ -1,0 +1,9 @@
+{
+    "env": {
+        "DB_USER": "mern-course",
+        "DB_PASSWORD": "ZuPY8F6mjYvh3Nxn",
+        "DB_NAME": "mern",
+        "MAPS_API_KEY": "AIzaSyBOPoSlPca5KF_svoQnn3SleAcbebg2XB4",
+        "JWT_SECRECT_KEY": "supersecret_dont_share"
+    }
+}
