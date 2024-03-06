@@ -16,12 +16,6 @@ app.use(cors())
 
 app.use(bodyParser.json())
 
-console.log('----------------------------------------------');
-console.log(SAVED_IMAGES)
-console.log(__dirname + SAVED_IMAGES)
-console.log(process.cwd() + SAVED_IMAGES)
-console.log('----------------------------------------------');
-
 app.use('/uploads/images', express.static(process.cwd() + SAVED_IMAGES))
 
 app.use('/api/users', userRoutes)

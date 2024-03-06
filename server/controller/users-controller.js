@@ -95,12 +95,13 @@ async function setNewUser(req, res, next){
         return next(new httpError('Error saving user!!', 500))
     }
     
+    const imageRelativePath = req.file.path.replace(process.cwd(), '')
 
     newUser = new User({
         name, 
         email, 
         password: hashPass,
-        image: '\\' + req.file.path,
+        image: imageRelativePath,
         places: []
     })
     try {
