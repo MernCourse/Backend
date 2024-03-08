@@ -8,22 +8,25 @@ const path = require('path')
 const placesRoutes = require('./server/routes/places-routes')
 const userRoutes = require('./server/routes/user-routes')
 const httpError = require('./server/models/http-error')
-const { DB_LINK, SAVED_IMAGES } = require('./server/utils/constants')
+const { DB_LINK, SAVED_IMAGES, PUBLIC_FOLDER } = require('./server/utils/constants')
 
 const app = express()
 
-app.use(cors())
-
 app.use(bodyParser.json())
 
-app.use('/uploads/images', express.static(process.cwd() + SAVED_IMAGES))
+app.use(cors())
+
+app.use('/uploads/images', express.static(
+    path.resolve(SAVED_IMAGES[0], SAVED_IMAGES[1])))
+
+app.use(express.static(path.resolve(PUBLIC_FOLDER)))
 
 app.use('/api/users', userRoutes)
 
 app.use('/api/places', placesRoutes)
 
 app.use((req, res, next) => {
-    throw new httpError('Could not find the specified route!!', 404)
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
 
 app.use((error, req, res, next) => {
