@@ -9,7 +9,7 @@ const fileUpload = multer({
     limits: { filesSize: 500000 },
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, process.cwd() + SAVED_IMAGES)
+            cb(null, path.resolve(SAVED_IMAGES[0], SAVED_IMAGES[1]))
         },  
         filename: (req, file, cb) => {
             const ext = MIME_TYPE_MAP[file.mimetype]

@@ -1,5 +1,5 @@
 # Remember to build the react project and paste the build -> public folder.
-# To build the current dockerfile:  docker build . -t any-name
+# To build the current dockerfile:  docker build . -f localDockerFile -t any-name
 # To run created image: docker run -d --name=any-run-name -p 5000:5000 any-image-name
 # Use Node 18 alpine as parent image
 FROM node:18-alpine
@@ -23,4 +23,4 @@ RUN mkdir -p ./uploads/images
 EXPOSE 5000
 
 # Start the application
-CMD npm start
+CMD npm run dev
